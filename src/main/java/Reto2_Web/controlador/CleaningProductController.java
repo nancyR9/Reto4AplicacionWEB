@@ -44,8 +44,8 @@ public class CleaningProductController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public CleaningProduct create(@RequestBody CleaningProduct cleanProd) {
-        return cleaningProdService.save(cleanProd);
+    public void create(@RequestBody CleaningProduct cleanProd) {
+        cleaningProdService.save(cleanProd);
     }
 
     @PutMapping("/update")

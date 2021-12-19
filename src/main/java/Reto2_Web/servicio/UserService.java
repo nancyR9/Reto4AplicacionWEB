@@ -92,11 +92,10 @@ public class UserService {
     }
     
     public boolean delete(int userId) {
-        Boolean aBoolean = getUser(userId).map(user -> {
+       return getUser(userId).map(user ->{
             userRepository.delete(user);
             return true;
         }).orElse(false);
-        return aBoolean;
     }
     
     public boolean emailExists(String email) {
